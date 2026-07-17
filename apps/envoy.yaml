@@ -6,12 +6,10 @@ metadata:
 spec:
   project: default
   source:
-    # Points to the official Envoy Gateway OCI repository
-    repoURL: oci://docker.io/envoyproxy
-    chart: gateway-helm
-    targetRevision: v1.8.2
+    repoURL: oci://docker.io/envoyproxy/gateway-helm
+    targetRevision: v1.8.3
   destination:
-    server: https://default.svc
+    server: 'https://kubernetes.default.svc'
     namespace: envoy-gateway-system
   syncPolicy:
     automated:
