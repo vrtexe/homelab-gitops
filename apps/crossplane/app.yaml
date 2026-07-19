@@ -8,14 +8,13 @@ spec:
   sources:
     - repoURL: https://github.com/vrtexe/homelab-gitops.git
       targetRevision: HEAD
-      path: apps/crossplane
       ref: repo
     - repoURL: https://charts.crossplane.io/stable
       chart: crossplane
       targetRevision: 2.3.3
       helm:
         valueFiles:
-          - $repo/values.yaml
+          - $repo/apps/crossplane/values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: crossplane-system
